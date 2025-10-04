@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-List Camp 290925</title>
+    <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+    <!-- Semantic structure-->
+<section class="container">
+     <header>
+        <h2><i>Camp~Camp</i> Todo App</h2>
+        <p>Add a todo ... </p>
+     </header>
+
+    <!-- main content -->
+     <main class="main-content">
+        <!-- make form -->
+        <section class="input-section">
+            <form id="todo-form">
+            <input type="text" id="todoInput" placeholder="Enter your new task ..." required>
+            <input type="text" id="todoDate" placeholder="Select date (dd/mm/yyyy)" required>
+            <button id="addBtn">Add Task</button>
+            </form>
+        </section>
+
+        <!-- Action Buttons -->
+
+         <section class="filters">
+            <p>Filter by Status</p>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+         </section>
+
+        <!-- Todo List -->
+         <section class="todo-list-section" id="todoList">
+            <!-- Todo items will be dynamically added here -->
+                <section class="empty-state" id="emptyState">
+                <p>No todos yet. Gotta find your task!</p>
+                </section> 
+         </section>
+    
+     </main>
+
+    <!-- footer -->
+    <footer>
+        <section class="stats">
+            <section id="taskCount">0 tasks</section>
+        </section>
+        <button class="delete-all-btn" id="deleteAllBtn">Delete All</button>
+        <br>
+        <p>&copy 2025 Our App</p>
+    </footer>
+</section>
+
+    <script src="js\script.js"></script>
+</body>
+</html>

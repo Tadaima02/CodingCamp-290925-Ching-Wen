@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    padding : 20px;
+    display: flex;
+    line-height: 1.6;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background: gray;
+    color: white;
+    border-radius: 8px;
+    box-shadow:  0 0 10px gray;
+    border: 12px solid gray;
+    position: relative
+}
+/* animation moving border by youtube*/
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.container::after, .container::before {
+    content:'';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 50%,aqua,aquamarine);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.container::before {
+    filter: blur(1.5rem);
+    opacity: 0,5;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+header {
+    padding: 30px 20px;
+    text-align: center;
+    background: black;
+    border: 1px solid aqua;
+    border-radius: 5px;
+}
+
+header h2 {
+    color: whitesmoke;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+header p {
+    color: whitesmoke;
+    font-size: 0.8rem;
+}
+
+.main-content {
+    padding: 20px;
+
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+#todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#todoInput {
+    flex: 2;
+    padding: 12px;
+    border: 1px solid aqua;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#todoDate {
+    flex: 2;
+    padding: 12px;
+    border: 1px solid aqua;
+    border-radius:: 4px;
+    font-size: 14px;
+}
+
+#addBtn {
+    padding: 12px 20px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#addBtn:hover {
+    background: #99D9EA;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid aqua;
+    margin-left: 18px;
+}
+
+.filters p {
+    color: whitesmoke;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 15px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: black;
+    color: white;
+    border: 1px solid aqua;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.filter-btn.active {
+    background: black;
+    color: white;
+    border-color: aqua;
+}
+
+.filter-btn:hover, .filter-btn.activate:hover {
+    background: #99D9EA;
+}
+.todo-list-section {
+    min-height: 200px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: whitesmoke;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background: black;
+}
+
+.todo-item:last-child{
+    border-bottom: none;
+}
+
+.todo-checkbox {
+    margin-right: 15px;
+    width: 18px;
+    height: 18px;
+    border-radius: 2%;
+}
+
+.todo-content {
+    flex: 1;
+}
+
+.todo-title {
+    font-weight: normal;
+    margin-bottom: 5px;
+    color: whitesmoke;
+}
+
+.todo-date {
+    font-weight: normal;
+    font-size:  12px;
+    color: whitesmoke;  
+}
+
+.todo-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.action-btn:hover {
+    color: aqua;
+}
+
+footer {
+    padding: 20px;
+    background: black;
+    color: whitesmoke;
+    border-top: 1px solid aqua;
+    align-items: center;
+    display: flex;
+}
+
+.stats {
+    color: whitesmoke;
+    font-size: 14px;
+}
+
+.delete-all-btn {
+    background: gray;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 255px;
+}
+
+.delete-all-btn:hover {
+    background: #99D9EA;
+    color: whitesmoke;
+}
+
+footer p {
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
+    color: #999;
+    font-size: 12px;
+}
